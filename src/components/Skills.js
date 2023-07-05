@@ -1,4 +1,8 @@
 import React from 'react';
+// motion
+import { motion } from 'framer-motion';
+// variants
+import { fadeIn } from '../variants';
 // images
 import img1 from '../assets/html5.png'
 import img2 from '../assets/css.png'
@@ -17,11 +21,21 @@ const Skills = () => {
     return (
         <div className='section' id='skills'>
             <div className='container mx-auto'>
-                <div className='text-center mb-20'>
+                <motion.div
+                    variants={fadeIn('left', 0.3)}
+                    initial='hidden'
+                    whileInView={'show'}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className='text-center mb-20'>
                     <h3 className='h2 text-accent'>My Skills</h3>
                     <p>These are my skills that I am highly confident about</p>
-                </div>
-                <div className='grid grid-cols-4 gap-20 justify-items-center'>
+                </motion.div>
+                <motion.div
+                    variants={fadeIn('right', 0.4)}
+                    initial='hidden'
+                    whileInView={'show'}
+                    viewport={{ once: false, amount: 0.3 }}
+                    className='grid grid-cols-4 gap-20 justify-items-center'>
                     <img className='w-20' src={img1} alt="" />
                     <img className='w-20' src={img2} alt="" />
                     <img className='w-20' src={img3} alt="" />
@@ -34,7 +48,7 @@ const Skills = () => {
                     <img className='w-20' src={img10} alt="" />
                     <img className='w-20' src={img11} alt="" />
                     <img className='w-20' src={img12} alt="" />
-                </div>
+                </motion.div>
             </div>
         </div>
     );
