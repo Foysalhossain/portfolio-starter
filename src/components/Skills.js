@@ -20,7 +20,7 @@ import img12 from '../assets/github.png'
 const Skills = () => {
     return (
         <div className='section' id='skills'>
-            <div className='container mx-auto'>
+            <div className='container mx-auto mt-80 lg:mt-0'>
                 <motion.div
                     variants={fadeIn('left', 0.3)}
                     initial='hidden'
@@ -35,7 +35,7 @@ const Skills = () => {
                     initial='hidden'
                     whileInView={'show'}
                     viewport={{ once: false, amount: 0.3 }}
-                    className='grid grid-cols-4 gap-20 justify-items-center'>
+                    className='grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-20 justify-items-center'>
                     <img className='w-20' src={img1} alt="" />
                     <img className='w-20' src={img2} alt="" />
                     <img className='w-20' src={img3} alt="" />

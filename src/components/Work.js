@@ -27,7 +27,7 @@ const Work = () => {
           initial='hidden'
           whileInView={'show'}
           viewport={{ once: false, amount: 0.3 }}
-          className='grid grid-cols-3 gap-x-20'>
+          className='grid lg:grid-cols-3 gap-y-10 gap-x-20'>
           <div className="card w-96 bg-base-100 shadow-xl">
             <figure><img className='rounded-t-lg' src={img1} alt="Shoes" /></figure>
             <div className="card-body p-4 bg-slate-200 rounded-b-lg text-black text-center">
