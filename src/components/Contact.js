@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react';
 // motion
 import { motion } from 'framer-motion';
 // variants
 import { fadeIn } from '../variants';
+// emailjs
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef();
+  console.log(form);
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_sl8oyvn',
+      'template_7692bsp',
+      form.current,
+      'wqh3AXfhBeGDyo-F4')
+      .then((result) => {
+        console.log(result);
+      }, (error) => {
+        console.log(error.text);
+      });
+  };
+
   return (
     <section className='py-16 lg:section' id='contact'>
       <div className="container mx-auto">
@@ -27,22 +46,14 @@ const Contact = () => {
             initial='hidden'
             whileInView={'show'}
             viewport={{ once: false, amount: 0.3 }}
-            className='flex-1 border rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start'>
-            <input
-              className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all'
-              type="text"
-              placeholder='Your name'
-            />
-            <input
-              className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all'
-              type="email"
-              placeholder='Your email'
-            />
-            <textarea
-              className='bg-transparent border-b py-12 outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none mb-12'
-              placeholder='Your message'>
-            </textarea>
-            <button className='btn btn-lg'>Send Message</button>
+            className='flex-1 border rounded-2xl flex flex-col gap-y-6 pb-24 p-6 items-start' ref={form} onSubmit={sendEmail}>
+            <label>Name</label>
+            <input className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all' type="text" name="user_name" />
+            <label>Email</label>
+            <input className='bg-transparent border-b py-3 outline-none w-full placeholder:text-white focus:border-accent transition-all' type="email" name="user_email" />
+            <label>Message</label>
+            <textarea className='bg-transparent border-b py-12 outline-none w-full placeholder:text-white focus:border-accent transition-all resize-none mb-12' name="message" />
+            <input className='btn btn-lg' type="submit" value="Send" />
           </motion.form>
         </div>
       </div>
