@@ -9,8 +9,12 @@ import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 // variants
 import { fadeIn } from '../variants';
+// resume
+import resume from '../assets/resume/My Resume.pdf'
+import { Link } from 'react-scroll';
 
 const Banner = () => {
+
   return (
     <section className='min-h-[85vh] lg:min-h-[78vh] flex items-center' id='home'>
       <div className="container mx-auto">
@@ -58,8 +62,13 @@ const Banner = () => {
               whileInView={'show'}
               viewport={{ once: false, amount: 0.7 }}
               className='flex max-w-max gap-x-6 items-center mb-8 mx-auto lg:mx-0'>
-              <button className='btn btn-lg'>Contact me</button>
-              <a href="#" className='text-gradient btn-link'>My Portfolio</a>
+              <Link to='contact'>
+                <button className='btn btn-lg'>Contact me</button>
+              </Link>
+              {/* resume */}
+              <a href={resume} className='text-gradient btn-link' download='Resume'>
+                Resume
+              </a>
             </motion.div>
             {/* socials */}
             <motion.div
