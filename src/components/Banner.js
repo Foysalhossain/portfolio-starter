@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 // variants
 import { fadeIn } from '../variants';
 // resume
-import resume from '../assets/resume/My Resume.pdf'
+import resume from '../assets/resume/FoysalHossain_Resume.pdf'
 import { Link } from 'react-scroll';
 
 const Banner = () => {
