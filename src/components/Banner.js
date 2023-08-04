@@ -2,7 +2,7 @@ import React from 'react';
 // images
 import Images from '../assets/me.jpg';
 // icons
-import { FaGithub, FaYoutube, FaDribble, FaLinkedinIn, FaFacebook } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaFacebook } from 'react-icons/fa';
 // type animaiton
 import { TypeAnimation } from 'react-type-animation';
 // motion
